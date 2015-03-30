@@ -1,0 +1,12 @@
+Required php extensions : 
+php5-imagick
+php5-gd (not sure)
+php-gettext
+
+
+Translation functions needs locale packages to be installed on the server : 
+apt-get install language-pack-en-base
+apt-get install language-pack-fr-base
+apt-get install language-pack-de-base
+apt-get install language-pack-it-base
+apt-get install language-pack-................-base
