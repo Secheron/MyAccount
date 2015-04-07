@@ -1,0 +1,59 @@
+root,html,body {
+    font-family:Tetria LT Com, Helvetica, Sans-serif;
+}
+
+.navbar-header {
+    background-color:#0055a6;
+}
+
+.navbar {
+    background-color:#0055a6;
+}
+
+.navbar .navbar-brand {
+    color:white;
+}
+
+.navbar-brand:hover {
+    color:#eeeeee;
+}
+
+.navbar:hover {
+    color:#eeeeee;
+}
+
+
+.panel-compassion {
+    border-color: #0055a6;
+}
+.panel-compassion > .panel-heading {
+    color: #fff;
+    background-color: #0055a6;
+    border-color: #0055a6;
+    min-height:105px;
+}
+.panel-compassion > .panel-heading + .panel-collapse > .panel-body {
+    border-top-color: #0055a6;
+}
+.panel-compassion > .panel-heading .badge {
+    color: #0055a6;
+    background-color: #fff;
+}
+.panel-compassion > .panel-footer + .panel-collapse > .panel-body {
+    border-bottom-color: #0055a6;
+}
+
+.crop-square {
+    overflow:hidden; 
+    border-radius:5px;
+    border:1px solid black; 
+    padding:0px;
+    width:80px;
+    height:80px;
+}
+
+.crop-square img {
+    vertical-align:top;
+    margin:0px;
+    padding:0px;
+}
