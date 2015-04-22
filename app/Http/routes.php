@@ -1,5 +1,7 @@
 <?php
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -11,11 +13,23 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+//Route::get('/auth/login', 'LoginController@index');
+Route::get('/', 'HomeController@index');
 
-Route::get('home', 'HomeController@index');
+Route::get('/partner', 'PartnerController@CreatePartner');
 
+Route::get('/odoo', 'WelcomeController@index');
+
+
+    Route::get('/login', 'Auth\AuthController@getRegister');
+	Route::post('/login', 'Auth\AuthController@postRegister');
+
+
+
+/*
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+*/
+

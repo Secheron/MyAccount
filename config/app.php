@@ -13,7 +13,8 @@ return [
 	|
 	*/
 
-	'debug' => env('APP_DEBUG', false),
+	'debug' => env('APP_DEBUG', true),
+
 
 	/*
 	|--------------------------------------------------------------------------
@@ -145,6 +146,16 @@ return [
 		'MyAccount\Providers\EventServiceProvider',
 		'MyAccount\Providers\RouteServiceProvider',
 
+		//bootstrap
+        'Illuminate\Html\HtmlServiceProvider',
+		//debug
+		'Barryvdh\Debugbar\ServiceProvider',
+
+		//Models
+		'MyAccount\Providers\Models\PartnerServiceProvider',
+		'MyAccount\Providers\Models\ChildServiceProvider',
+		'MyAccount\Providers\Models\DescriptionServiceProvider',
+
 	],
 
 	/*
@@ -192,6 +203,13 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+
+		//Debug
+		'Debugbar' => 'Barryvdh\Debugbar\Facade',
+
+		//bootstrap
+        'Html'      => 'Illuminate\Html\HtmlFacade',
+        'Form'      => 'Illuminate\Html\FormFacade',
 
 	],
 

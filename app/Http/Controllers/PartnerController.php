@@ -1,7 +1,10 @@
 <?php namespace MyAccount\Http\Controllers;
 
-class HomeController extends Controller {
+use MyAccount\Models\PartnerServiceProvider;
+use MyAccount\Models\Partner;
+use Config;
 
+class PartnerController extends Controller {
 	/*
 	|--------------------------------------------------------------------------
 	| Home Controller
@@ -12,26 +15,20 @@ class HomeController extends Controller {
 	| controller as you wish. It is just here to get your app started!
 	|
 	*/
-
-	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
-		//$this->middleware('auth');
-	}
-
-	/**
-	 * Show the application dashboard to the user.
-	 *
-	 * @return Response
-	 */
 	public function index()
 	{
-		
-		return view('home');
+		$this->CreatePartner();
 	}
 
+	public function CreatePartner()
+	{
+		$app = app();
+
+		$binding = $app->make('Partner');
+		print_r($binding);
+
+		
+
+		return view('debugView');
+	}
 }

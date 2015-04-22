@@ -4,6 +4,8 @@ use MyAccount\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
+use Request as Req;
 
 class AuthController extends Controller {
 
@@ -35,4 +37,38 @@ class AuthController extends Controller {
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
 
+	public function getRegister()
+	{
+		return view('auth.login');
+	}
+
+	public function postRegister(Request $request)
+	{
+		$this->validate($request, [
+			'username' => 'required', 'password' => 'required',
+		]);
+		
+		
+		$credentials = $request->only('username', 'password');
+
+		$app = app();
+		$partner = $app->make('Partner');
+		//$partner->create($credentials);
+//$request->has('remember')
+		//Trying authentification
+		//var_dump($this->auth->validate($credentials));
+		$redis = Redis::connection();
+
+		//var_dump($partner);
+
+		$username = Req::input('username');
+		$password = Req::input('password');
+
+		var_dump($this->auth->check());
+
+
+		
+
+		//return view('welcome');
+	}
 }
