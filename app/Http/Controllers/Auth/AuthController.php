@@ -51,6 +51,7 @@ class AuthController extends Controller {
 		
 		$credentials = $request->only('username', 'password');
 
+		
 		//$request->has('remember')
 		//if(!$this->auth->check())
 

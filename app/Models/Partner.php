@@ -50,7 +50,6 @@ class Partner {
         		];
 
         $redis->HMSET($this->id, $instance);
-        
     }
 
     public function SaveInstanceFromCache ($partnerId) {
@@ -76,7 +75,7 @@ class Partner {
     }
 
 	public function SetPartnerInformations ($credentials, $type) {
-		
+		//Need to be implemented with sessions
 		if($type === "odoo") {
 
 			$app = app();
@@ -85,10 +84,18 @@ class Partner {
 			//Need to be store in session
 			$odoo->LoginOdoo($credentials);
 
+			$instance = $odoo->ExecuteAndGetOdooMethod(
+				'res.partner', 
+				'get_partner_from_user',
+				//Need to implement default value in ExecuteAndGetOdooMethod
+				array(1)
+				);
 
+			//Need to implement this instance informations in properties of 
+			//this partner, and aften then store the partner in cach with call SaveInstanceToCache
+			var_dump($instance);
 		}
 	}
-
 
     public function AddChild(&$value) {
         $this->_listChilds[] = $value;
@@ -128,7 +135,7 @@ class Partner {
         }
         
         if(!$exist) {
-            throw new Exception('Partner::RemoveChild: Child can\'t be removed');
+            //Need to be implemented: throw new Exception('Partner::RemoveChild: Child can\'t be removed');
         }
     }
 
