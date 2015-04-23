@@ -155,6 +155,7 @@ return [
 		'MyAccount\Providers\Models\PartnerServiceProvider',
 		'MyAccount\Providers\Models\ChildServiceProvider',
 		'MyAccount\Providers\Models\DescriptionServiceProvider',
+		'MyAccount\Providers\Models\OdooServiceProvider',
 
 	],
 

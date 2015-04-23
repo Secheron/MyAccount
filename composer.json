@@ -18,7 +18,10 @@
 	"autoload": {
 		"classmap": [
 			"database",
-			"app/Models"
+			"app/Models",
+			"app/Exceptions",
+			"app/lib/ripcord",
+			"app/lib/xml_rpc"
 		],
 		"psr-4": {
 			"MyAccount\\": "app/"

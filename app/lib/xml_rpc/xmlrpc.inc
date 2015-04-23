@@ -1,6 +1,7 @@
 <?php
 // by Edd Dumbill (C) 1999-2002
 // <edd@usefulinc.com>
+//Version 3.0.1
 
 // Copyright (c) 1999,2000,2002 Edd Dumbill.
 // All rights reserved.

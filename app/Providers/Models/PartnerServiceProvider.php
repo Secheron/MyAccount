@@ -7,10 +7,9 @@ class PartnerServiceProvider extends ServiceProvider {
 
     public function register()
     {
-
-        $this->app->bind('Partner', function($app)
+        $this->app->bind('Partner', function()
 		{
-		    return new Partner($app);
+		    return new Partner();
 		});
     }
 }
